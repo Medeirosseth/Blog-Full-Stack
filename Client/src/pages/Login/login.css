@@ -1,0 +1,52 @@
+.logIn{
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('https://i.stack.imgur.com/vzbuQ.jpg');
+  color: white;
+}
+
+.loginTitle{
+  font-size: 50px;
+  color: white;
+  
+}
+
+.loginForm{
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.loginForm>label{
+  margin: 10px 0 ;
+}
+
+.loginInput{
+  padding: 10px;
+  background-color: white;
+  border: none;
+}
+
+.loginButton{
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: lightcoral;
+  border: none;
+  color: white;
+  border-radius: 5px ;
+  padding: 10px;
+}
+
+.LoginRegisterButton{
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: teal;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
