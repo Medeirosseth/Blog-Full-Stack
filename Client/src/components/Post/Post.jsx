@@ -1,43 +1,30 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './post.css'
 
-export default function Post() {
+export default function Post({post}) {
   return (
     <div className="post">
+    {post.photo && (  
       <img
         className="postImage"
-        src="https://www.vintageguitar.com/wp-content/uploads/01A-DUMBLE-OD-SPECIAL.jpg"
+        src={post.photo}
         alt="amp"/>
+    )}
       <div className="postInfo">
         <div className="postCategory">
-          <span className="postCat">Music</span>
-          <span className="postCat">life</span>
+          {post.categories.map((c) => (
+            <span className="postCat">{c.name}</span>
+          ))},
         </div>
-        <span className="postTitle">
-          Duis commodo esse qui minim aliquip et incididunt.
-        </span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle"> {post.title} </span>
+        </Link>
         <hr/>
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
       </div>
       <p className="postDescription">
-        Incididunt tempor velit aliqua aliquip enim nisi ex labore velit consectetur 
-        eiusmod. Sunt aute sit minim consequat consequat consectetur irure irure ad 
-        sint adipisicing. Aliquip ex laboris laboris nulla consectetur ullamco enim sint. 
-        Minim mollit officia anim proident velit dolor consectetur minim amet consequat 
-        reprehenderit magna. Excepteur irure adipisicing adipisicing dolore 
-        anim exercitation aute duis aute.
-        Incididunt tempor velit aliqua aliquip enim nisi ex labore velit consectetur 
-        eiusmod. Sunt aute sit minim consequat consequat consectetur irure irure ad 
-        sint adipisicing. Aliquip ex laboris laboris nulla consectetur ullamco enim sint. 
-        Minim mollit officia anim proident velit dolor consectetur minim amet consequat 
-        reprehenderit magna. Excepteur irure adipisicing adipisicing dolore 
-        anim exercitation aute duis aute.
-        Incididunt tempor velit aliqua aliquip enim nisi ex labore velit consectetur 
-        eiusmod. Sunt aute sit minim consequat consequat consectetur irure irure ad 
-        sint adipisicing. Aliquip ex laboris laboris nulla consectetur ullamco enim sint. 
-        Minim mollit officia anim proident velit dolor consectetur minim amet consequat 
-        reprehenderit magna. Excepteur irure adipisicing adipisicing dolore 
-        anim exercitation aute duis aute.
+        {post.description}
       </p>
     </div>
   )

@@ -24,16 +24,16 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/register">{user ? <HomePage/> : <Register />}</Route>
-          <Route exact path="/login">{user ? <HomePage/> : <Login />}</Route>
-          <Route exact path="/write">{user ? <Write/> : <Register/>}</Route>
-          <Route exact path="/settings">{user ? <Settings/> : <Register/>}</Route>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/register">{user ? <HomePage/> : <Register />}</Route>
+        <Route exact path="/login">{user ? <HomePage/> : <Login />}</Route>
+        <Route exact path="/write">{user ? <Write/> : <Register/>}</Route>
+        <Route exact path="/settings">{user ? <Settings/> : <Register/>}</Route>
         <Route exact path="/post/:postId">
         <SinglePost />
-      </Route>
+        </Route>
         </Switch>
       </div>
     </Router>
