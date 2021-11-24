@@ -17,7 +17,7 @@ import SinglePost from "./components/SinglePost/SinglePost";
 
 function App() {
 
-  const user = true //look at this if routing isnt working 
+  const user = false //look at this if routing isnt working 
 
   return (
     <Router> 
